@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dutch Political Psychology</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 16px;
+      color: #222;
+      background: #fff;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      height: 56px;
+    }
+    nav .site-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #1a3a5c;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #444;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover { color: #1a3a5c; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2e6da4 100%);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+    }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .hero p { font-size: 1.1rem; max-width: 640px; margin: 0 auto 1.5rem; opacity: 0.9; }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 3rem 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    section + section { border-top: 1px solid #eee; }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #1a3a5c;
+      margin-bottom: 1.25rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      color: #2e6da4;
+      margin-bottom: 0.5rem;
+    }
+
+    /* UPCOMING MEETING */
+    .meeting-card {
+      background: #f0f6ff;
+      border-left: 4px solid #2e6da4;
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .meeting-card .date {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #2e6da4;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .meeting-card h3 { color: #1a3a5c; margin-bottom: 0.4rem; }
+    .meeting-card p { color: #444; font-size: 0.95rem; line-height: 1.5; }
+    .meeting-card .meta { margin-top: 0.6rem; font-size: 0.88rem; color: #666; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.55rem 1.3rem;
+      background: #2e6da4;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #1a3a5c; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #2e6da4;
+      color: #2e6da4;
+      margin-left: 0.5rem;
+    }
+    .btn-outline:hover { background: #2e6da4; color: #fff; }
+
+    /* FORMS */
+    form { max-width: 520px; }
+    form label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #333;
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      font-family: inherit;
+    }
+    form input:focus, form textarea:focus, form select:focus {
+      outline: none;
+      border-color: #2e6da4;
+      box-shadow: 0 0 0 2px rgba(46,109,164,0.15);
+    }
+    form textarea { resize: vertical; min-height: 90px; }
+    form button {
+      background: #2e6da4;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    form button:hover { background: #1a3a5c; }
+
+    /* ANNOUNCEMENTS */
+    .announcement {
+      border-left: 3px solid #e8a020;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.9rem;
+      background: #fffbf0;
+      border-radius: 4px;
+    }
+    .announcement .ann-date { font-size: 0.82rem; color: #999; margin-bottom: 0.2rem; }
+    .announcement p { font-size: 0.95rem; color: #333; line-height: 1.5; }
+
+    /* ARCHIVE */
+    .archive-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid #eee;
+      gap: 1rem;
+    }
+    .archive-item:last-child { border-bottom: none; }
+    .archive-item .info { flex: 1; }
+    .archive-item .info h3 { font-size: 1rem; color: #1a3a5c; margin-bottom: 0.2rem; }
+    .archive-item .info p { font-size: 0.88rem; color: #666; }
+    .archive-item .links { white-space: nowrap; }
+    .archive-item .links a {
+      font-size: 0.85rem;
+      color: #2e6da4;
+      text-decoration: none;
+      margin-left: 0.75rem;
+    }
+    .archive-item .links a:hover { text-decoration: underline; }
+
+    /* COMMUNITY */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    .community-card {
+      background: #f7f9fc;
+      border: 1px solid #dde4ef;
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .community-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .community-card h3 { font-size: 1rem; color: #1a3a5c; margin-bottom: 0.4rem; }
+    .community-card p { font-size: 0.88rem; color: #555; line-height: 1.5; }
+    .community-card a {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+      color: #2e6da4;
+      text-decoration: none;
+    }
+    .community-card a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: #1a3a5c;
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.88rem;
+      margin-top: 2rem;
+    }
+    footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* TABS for archive */
+    .tabs { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+    .tab-btn {
+      padding: 0.4rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 0.88rem;
+      color: #555;
+      transition: all 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: #2e6da4;
+      color: #fff;
+      border-color: #2e6da4;
+    }
+
+    @media (max-width: 600px) {
+      nav ul { gap: 0.75rem; }
+      .hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a class="site-title" href="#">Dutch Political Psychology</a>
+  <ul>
+    <li><a href="#meeting">Meetings</a></li>
+    <li><a href="#mailing">Mailing List</a></li>
+    <li><a href="#present">Present</a></li>
+    <li><a href="#announcements">Announcements</a></li>
+    <li><a href="#archive">Archive</a></li>
+    <li><a href="#community">Community</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Dutch Political Psychology</h1>
+  <p>A community for researchers working at the intersection of political science and psychology in the Netherlands.</p>
+  <span class="badge">🇳🇱 Open to all researchers & students</span>
+</div>
+
+<!-- UPCOMING MEETING -->
+<section id="meeting">
+  <h2>📅 Upcoming Meeting</h2>
+  <div class="meeting-card">
+    <div class="date"><strong>Friday November 13, 2026 · 10:30–17:00</strong></div>
+    <h3>Fall Meeting 2026</h3>
+    <p>Join us for presentations featuring political psychology work from diverse disciplines by both junior and senior researchers, followed by drinks.
+    This time, we will again feature a poster session, in which junior researchers are invited to present their work related to political psychology. 
+      Please feel warmly invited to sign up and spread this call to junior researchers you think may be interested. If you're interested in presenting a poster, please indicate this when filling in the sign-up form (see link below).
+We are again able to sponsor the printing costs for junior researchers who are in need of this support in order to present their poster. If you're interested in this sponsoring, please reach out by responding to this email.
+
+Registration: In case you are planning on attending, please fill in this form: <a href="https://forms.cloud.microsoft/e/pyNSimwu4B>Click here</a> 
+</p>
+    <div class="meta">📍 University of Amsterdam, REC A — Room C10.20 &nbsp;|&nbsp; 
+    <a href="#" class="btn">Register for this meeting</a>
+    <a href="#" class="btn btn-outline">View programme</a>
+  </div>
+  <p style="font-size:0.9rem; color:#666; margin-top:0.5rem;">Not yet registered for the mailing list? <a href="#mailing" style="color:#2e6da4;">Sign up below</a> to receive meeting invitations and updates.</p>
+</section>
+
+<!-- MAILING LIST -->
+<section id="mailing">
+  <h2>✉️ Join the Mailing List</h2>
+  <p style="margin-bottom:1.25rem; color:#444;">Stay informed about upcoming meetings, calls for presentations, and community news. We send only relevant updates — no spam.</p>
+  <form onsubmit="handleForm(event, 'mailing-thanks')">
+    <label for="ml-name">Full name</label>
+    <input type="text" id="ml-name" placeholder="Your name" required />
+
+    <label for="ml-email">Email address</label>
+    <input type="email" id="ml-email" placeholder="your@email.nl" required />
+
+    <label for="ml-affil">Affiliation</label>
+    <input type="text" id="ml-affil" placeholder="University / Institute" />
+
+    <label for="ml-role">Role</label>
+    <select id="ml-role">
+      <option value="">— Select —</option>
+      <option>PhD student</option>
+      <option>Postdoctoral researcher</option>
+      <option>Assistant / Associate / Full Professor</option>
+      <option>Master's student</option>
+      <option>Other</option>
+    </select>
+
+    <button type="submit">Subscribe</button>
+    <p id="mailing-thanks" style="display:none; color:green; margin-top:0.75rem;">✅ Thank you! You've been added to the mailing list.</p>
+  </form>
+</section>
+
+<!-- INTEREST IN PRESENTING -->
+<section id="present">
+  <h2>🎤 Indicate Interest in Presenting</h2>
+  <p style="margin-bottom:1.25rem; color:#444;">We welcome presentations of ongoing research, recent publications, or methodological topics relevant to political psychology. Fill in the form below and we'll be in touch when scheduling future meetings.</p>
+  <form onsubmit="handleForm(event, 'present-thanks')">
+    <label for="pr-name">Full name</label>
+    <input type="text" id="pr-name" placeholder="Your name" required />
+
+    <label for="pr-email">Email address</label>
+    <input type="email" id="pr-email" placeholder="your@email.nl" required />
+
+    <label for="pr-affil">Affiliation</label>
+    <input type="text" id="pr-affil" placeholder="University / Institute" />
+
+    <label for="pr-title">Tentative title or topic</label>
+    <input type="text" id="pr-title" placeholder="e.g. Moral emotions and political judgment" />
+
+    <label for="pr-abstract">Short description (optional)</label>
+    <textarea id="pr-abstract" placeholder="A few sentences about your research or what you'd like to present..."></textarea>
+
+    <label for="pr-timing">Preferred timing</label>
+    <select id="pr-timing">
+      <option value="">— No preference —</option>
+      <option>Early 2027</option>
+      <option>Mid 2027</option>
+      <option>Late 2027</option>
+      <option>Flexible</option>
+    </select>
+
+    <button type="submit">Submit interest</button>
+    <p id="present-thanks" style="display:none; color:green; margin-top:0.75rem;">✅ Thank you! We'll be in touch when scheduling future meetings.</p>
+  </form>
+</section>
+
+<!-- ANNOUNCEMENTS -->
+<section id="announcements">
+  <h2>📢 Announcements</h2>
+
+  <div class="announcement">
+    <div class="ann-date">September 5, 2026</div>
+    <p><strong>New preprint available:</strong> D'Amore et al. — "The Polarization Triangle Framework" is now available as a preprint. Contact the authors for a copy.</p>
+  </div>
+
+  <div class="announcement">
+    <div class="ann-date">August 20, 2026</div>
+    <p><strong>Call for presentations:</strong> We are looking for speakers for our Spring 2027 meeting. <a href="#present" style="color:#2e6da4;">Indicate your interest here.</a></p>
+  </div>
+
+  <div class="announcement">
+    <div class="ann-date">July 10, 2026</div>
+    <p><strong>Job posting:</strong> Postdoctoral position in political psychology at Radboud University. Deadline: October 1, 2026. <a href="#" style="color:#2e6da4;">More info →</a></p>
+  </div>
+
+  <p style="font-size:0.88rem; color:#888; margin-top:0.75rem;">Have an announcement to share with the community? <a href="#community" style="color:#2e6da4;">Contact us.</a></p>
+</section>
+
+<!-- ARCHIVE -->
+<section id="archive">
+  <h2>🗂️ Archive of Past Meetings</h2>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="filterArchive('all', this)">All</button>
+    <button class="tab-btn" onclick="filterArchive('2026', this)">2026</button>
+    <button class="tab-btn" onclick="filterArchive('2025', this)">2025</button>
+    <button class="tab-btn" onclick="filterArchive('2024', this)">2024</button>
+  </div>
+
+  <div id="archive-list">
+    <div class="archive-item" data-year="2026">
+      <div class="info">
+        <h3>Spring Meeting 2026 — Emotions, Norms & Political Behavior</h3>
+        <p>May 14, 2026 · Utrecht University · Speakers: A. Jansen, B. de Vries</p>
+      </div>
+      <div class="links">
+        <a href="#">Programme</a>
+        <a href="#">Photos</a>
+      </div>
+    </div>
+
+    <div class="archive-item" data-year="2025">
+      <div class="info">
+        <h3>Fall Meeting 2025 — Polarization in the Dutch Context</h3>
+        <p>November 6, 2025 · Leiden University · Speakers: C. Bakker, D. Smit</p>
+      </div>
+      <div class="links">
+        <a href="#">Programme</a>
+        <a href="#">Photos</a>
+      </div>
+    </div>
+
+    <div class="archive-item" data-year="2025">
+      <div class="info">
+        <h3>Spring Meeting 2025 — Social Identity & Political Attitudes</h3>
+        <p>April 3, 2025 · Radboud University · Speakers: E. Mulder, F. Hoekstra</p>
+      </div>
+      <div class="links">
+        <a href="#">Programme</a>
+      </div>
+    </div>
+
+    <div class="archive-item" data-year="2024">
+      <div class="info">
+        <h3>Fall Meeting 2024 — Moralization & Democratic Values</h3>
+        <p>October 10, 2024 · VU Amsterdam · Speakers: G. Peters, H. Willems</p>
+      </div>
+      <div class="links">
+        <a href="#">Programme</a>
+        <a href="#">Photos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <h2>🤝 Community Space</h2>
+  <p style="margin-bottom:1.5rem; color:#444;">Connect with fellow researchers, share resources, and stay engaged between meetings.</p>
+  <div class="community-grid">
+    <div class="community-card">
+      <div class="icon">💬</div>
+      <h3>Discussion & Slack</h3>
+      <p>Join our Slack workspace to discuss research, share papers, and ask questions.</p>
+      <a href="#">Join Slack →</a>
+    </div>
+    <div class="community-card">
+      <div class="icon">🐦</div>
+      <h3>Follow us on X/Twitter</h3>
+      <p>Stay up to date with community news, paper recommendations, and event reminders.</p>
+      <a href="#">@DutchPolPsych →</a>
+    </div>
+    <div class="community-card">
+      <div class="icon">📄</div>
+      <h3>Reading Group</h3>
+      <p>Bimonthly online reading group on political psychology. Open to all levels.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="community-card">
+      <div class="icon">📬</div>
+      <h3>Contact the Organizers</h3>
+      <p>Questions, suggestions, or want to collaborate? We'd love to hear from you.</p>
+      <a href="mailto:info@dutchpoliticalpsychology.nl">Send an email →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Dutch Political Psychology Community · <a href="mailto:info@dutchpoliticalpsychology.nl">info@dutchpoliticalpsychology.nl</a></p>
+  <p style="margin-top:0.4rem; font-size:0.82rem;">Last updated September 2026</p>
+</footer>
+
+<script>
+  function handleForm(e, thanksId) {
+    e.preventDefault();
+    document.getElementById(thanksId).style.display = 'block';
+    e.target.reset();
+  }
+
+  function filterArchive(year, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.archive-item').forEach(item => {
+      item.style.display = (year === 'all' || item.dataset.year === year) ? 'flex' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
