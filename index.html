@@ -102,6 +102,15 @@
     .meeting-card h3 { color: #1a3a5c; margin-bottom: 0.4rem; }
     .meeting-card p { color: #444; font-size: 0.95rem; line-height: 1.5; }
     .meeting-card .meta { margin-top: 0.6rem; font-size: 0.88rem; color: #666; }
+    .meeting-card .registration-note {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .meeting-card .registration-note a {
+      color: #2e6da4;
+      text-decoration: underline;
+    }
 
     /* BUTTONS */
     .btn {
@@ -169,7 +178,21 @@
       border-radius: 4px;
     }
     .announcement .ann-date { font-size: 0.82rem; color: #999; margin-bottom: 0.2rem; }
-    .announcement p { font-size: 0.95rem; color: #333; line-height: 1.5; }
+    .announcement p { font-size: 0.95rem; color: #333; line-height: 1.6; margin-bottom: 0.5rem; }
+    .announcement p:last-of-type { margin-bottom: 0; }
+    .announcement a { color: #2e6da4; }
+    .announcement a:hover { text-decoration: underline; }
+    .flyer-link {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.88rem;
+      color: #2e6da4;
+      text-decoration: none;
+      border: 1px solid #2e6da4;
+      border-radius: 4px;
+      padding: 0.3rem 0.75rem;
+    }
+    .flyer-link:hover { background: #2e6da4; color: #fff; }
 
     /* ARCHIVE */
     .archive-item {
@@ -284,16 +307,13 @@
     <div class="date"><strong>Friday November 13, 2026 · 10:30–17:00</strong></div>
     <h3>Fall Meeting 2026</h3>
     <p>Join us for presentations featuring political psychology work from diverse disciplines by both junior and senior researchers, followed by drinks.
-    This time, we will again feature a poster session, in which junior researchers are invited to present their work related to political psychology. 
+    <br>This time, in addition to the talks, we will again feature a poster session, in which junior researchers are invited to present their work related to political psychology. 
       Please feel warmly invited to sign up and spread this call to junior researchers you think may be interested. If you're interested in presenting a poster, please indicate this when filling in the sign-up form (see link below).
 We are again able to sponsor the printing costs for junior researchers who are in need of this support in order to present their poster. If you're interested in this sponsoring, please reach out by sending us an email.</p>
-    <div class="meta">📍 University of Amsterdam, Roeterseilandcampus REC A — Room C10.20 &nbsp;|&nbsp; </div>
-<a href="#" class="btn">Register for this meeting</a>
+    <div class="meta">📍 University of Amsterdam, Roeterseilandcampus, REC A — Room C10.20 &nbsp;&nbsp; </div>
+    <p style="margin-top:1rem; font-size:0.95rem; color:#444;"><strong>Registration:</strong> In case you are planning on attending, please fill in the form by clicking the button below.</p>
+    <a href="https://forms.cloud.microsoft/e/pyNSimwu4B" target="_blank" class="btn">Register for this meeting</a>
     <a href="#" class="btn btn-outline">View programme</a>
-    <p class="registration-note">
-      <strong>Registration:</strong> In case you are planning on attending, please fill in the form by clicking the link below:
-      <a href="https://forms.cloud.microsoft/e/pyNSimwu4B" target="_blank">Click here</a>
-    </p>
   </div>
   <p style="font-size:0.9rem; color:#666; margin-top:0.5rem;">Not yet registered for the mailing list? <a href="#mailing" style="color:#2e6da4;">Sign up below</a> to receive meeting invitations and updates.</p>
 </section>
@@ -366,18 +386,27 @@ We are again able to sponsor the printing costs for junior researchers who are i
   <h2>📢 Announcements</h2>
 
   <div class="announcement">
-    <div class="ann-date">September 5, 2026</div>
-    <p><strong>New preprint available:</strong> D'Amore et al. — "The Polarization Triangle Framework" is now available as a preprint. Contact the authors for a copy.</p>
+    <div class="ann-date">September 6, 2026</div>
+    <p><strong>Call for edited book proposals — Routledge Global Perspectives in Political Psychology series</strong></p>
+    <p>Cengiz Erisen and I (Martijn van Zomeren) are looking for new edited book proposals in our <a href="https://www.routledge.com/Global-Perspectives-in-Political-Psychology/book-series/GPPP" target="_blank">Routledge Global Perspectives in Political Psychology series</a> — see the titles so far at that link.</p>
+    <p>The format is quite fitting for bringing together a collection of perspectives and insights/findings on a societally relevant topic. Chapters can range from theoretical to empirical, and from review of published research to novel primary studies. The focus is political psychology, which is an interdisciplinary field with psychology and political science as key audiences (but also sociology, philosophy, and communication science). Proposals are developed with the series editors (Cengiz Erisen and myself) and then contracted with the book editor(s).</p>
+    <p>Please contact me if you are interested in editing a book in the series, have questions, or would like to know more: <strong>Martijn van Zomeren</strong>, <a href="mailto:m.van.zomeren@rug.nl">m.van.zomeren@rug.nl</a>.</p>
+    <a href="Political Psychology Flyer.pdf" target="_blank" class="flyer-link">📄 Download flyer (PDF)</a>
   </div>
 
   <div class="announcement">
-    <div class="ann-date">August 20, 2026</div>
+    <div class="ann-date">September 4, 2026</div>
+    <p><strong>Call for poster presentations:</strong> We are looking for poster session presenters for our Fall 2026 meeting. <a href="#present" style="color:#2e6da4;">Indicate your interest here.</a></p>
+  </div>
+
+  <div class="announcement">
+    <div class="ann-date">September 8, 2026</div>
     <p><strong>Call for presentations:</strong> We are looking for speakers for our Spring 2027 meeting. <a href="#present" style="color:#2e6da4;">Indicate your interest here.</a></p>
   </div>
 
   <div class="announcement">
     <div class="ann-date">July 10, 2026</div>
-    <p><strong>Job posting:</strong> Postdoctoral position in political psychology at Radboud University. Deadline: October 1, 2026. <a href="#" style="color:#2e6da4;">More info →</a></p>
+    <p><strong>Job posting:</strong> *ADD CONTENT HERE*. <a href="#" style="color:#2e6da4;">More info →</a></p>
   </div>
 
   <p style="font-size:0.88rem; color:#888; margin-top:0.75rem;">Have an announcement to share with the community? <a href="#community" style="color:#2e6da4;">Contact us.</a></p>
@@ -389,55 +418,23 @@ We are again able to sponsor the printing costs for junior researchers who are i
   <div class="tabs">
     <button class="tab-btn active" onclick="filterArchive('all', this)">All</button>
     <button class="tab-btn" onclick="filterArchive('2026', this)">2026</button>
-    <button class="tab-btn" onclick="filterArchive('2025', this)">2025</button>
-    <button class="tab-btn" onclick="filterArchive('2024', this)">2024</button>
+   <!--  <button class="tab-btn" onclick="filterArchive('2025', this)">2025</button>
+    <button class="tab-btn" onclick="filterArchive('2024', this)">2024</button> -->
   </div>
 
   <div id="archive-list">
     <div class="archive-item" data-year="2026">
       <div class="info">
-        <h3>Spring Meeting 2026 — Emotions, Norms & Political Behavior</h3>
-        <p>May 14, 2026 · Utrecht University · Speakers: A. Jansen, B. de Vries</p>
+        <h3>Spring Meeting 2026</h3>
+        <p>May 22, 2026 · Universit of Amsterdam· 
+          Speakers: Ruth Dassonneville, Jakob Kasper, Mark Brandt,<br>Philipp Mendoza, Honorata Mazepus, Ashay Deshpande </p>
       </div>
       <div class="links">
-        <a href="#">Programme</a>
-        <a href="#">Photos</a>
+     <a href="Spring2026_program.pdf">Program</a>
+      <a href="#">Photos</a>
       </div>
     </div>
 
-    <div class="archive-item" data-year="2025">
-      <div class="info">
-        <h3>Fall Meeting 2025 — Polarization in the Dutch Context</h3>
-        <p>November 6, 2025 · Leiden University · Speakers: C. Bakker, D. Smit</p>
-      </div>
-      <div class="links">
-        <a href="#">Programme</a>
-        <a href="#">Photos</a>
-      </div>
-    </div>
-
-    <div class="archive-item" data-year="2025">
-      <div class="info">
-        <h3>Spring Meeting 2025 — Social Identity & Political Attitudes</h3>
-        <p>April 3, 2025 · Radboud University · Speakers: E. Mulder, F. Hoekstra</p>
-      </div>
-      <div class="links">
-        <a href="#">Programme</a>
-      </div>
-    </div>
-
-    <div class="archive-item" data-year="2024">
-      <div class="info">
-        <h3>Fall Meeting 2024 — Moralization & Democratic Values</h3>
-        <p>October 10, 2024 · VU Amsterdam · Speakers: G. Peters, H. Willems</p>
-      </div>
-      <div class="links">
-        <a href="#">Programme</a>
-        <a href="#">Photos</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- COMMUNITY -->
 <section id="community">
@@ -445,7 +442,7 @@ We are again able to sponsor the printing costs for junior researchers who are i
   <p style="margin-bottom:1.5rem; color:#444;">Connect with fellow researchers, share resources, and stay engaged between meetings.</p>
   <div class="community-grid">
     <div class="community-card">
-      <div class="icon">💬</div>
+      <!-- <div class="icon">💬</div>
       <h3>Discussion & Slack</h3>
       <p>Join our Slack workspace to discuss research, share papers, and ask questions.</p>
       <a href="#">Join Slack →</a>
@@ -462,18 +459,18 @@ We are again able to sponsor the printing costs for junior researchers who are i
       <p>Bimonthly online reading group on political psychology. Open to all levels.</p>
       <a href="#">Learn more →</a>
     </div>
-    <div class="community-card">
+    <div class="community-card">-->
       <div class="icon">📬</div>
       <h3>Contact the Organizers</h3>
       <p>Questions, suggestions, or want to collaborate? We'd love to hear from you.</p>
-      <a href="mailto:info@dutchpoliticalpsychology.nl">Send an email →</a>
+      <a href="mailto:politicalpsychology@list.uva.nl">Send an email →</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>Dutch Political Psychology Community · <a href="mailto:info@dutchpoliticalpsychology.nl">info@dutchpoliticalpsychology.nl</a></p>
+  <p>Dutch Political Psychology Community · <a href="mailto:politicalpsychology@list.uva.nl">politicalpsychology@list.uva.nl</a></p>
   <p style="margin-top:0.4rem; font-size:0.82rem;">Last updated September 2026</p>
 </footer>
 
@@ -495,3 +492,4 @@ We are again able to sponsor the printing costs for junior researchers who are i
 
 </body>
 </html>
+
