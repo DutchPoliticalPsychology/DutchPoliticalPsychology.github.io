@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dutch Political Psychology</title>
+  <meta name="description" content="Dutch Political Psychology — a community for researchers working at the intersection of political science and psychology in the Netherlands." />
+  <meta name="keywords" content="political psychology, Netherlands, Dutch, research community, polarization, moralization" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -133,42 +135,6 @@
     }
     .btn-outline:hover { background: #2e6da4; color: #fff; }
 
-    /* FORMS */
-    form { max-width: 520px; }
-    form label {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-      color: #333;
-    }
-    form input, form textarea, form select {
-      width: 100%;
-      padding: 0.55rem 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      font-family: inherit;
-    }
-    form input:focus, form textarea:focus, form select:focus {
-      outline: none;
-      border-color: #2e6da4;
-      box-shadow: 0 0 0 2px rgba(46,109,164,0.15);
-    }
-    form textarea { resize: vertical; min-height: 90px; }
-    form button {
-      background: #2e6da4;
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1.4rem;
-      border-radius: 5px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    form button:hover { background: #1a3a5c; }
-
     /* ANNOUNCEMENTS */
     .announcement {
       border-left: 3px solid #e8a020;
@@ -215,6 +181,84 @@
       margin-left: 0.75rem;
     }
     .archive-item .links a:hover { text-decoration: underline; }
+
+    /* PHOTO GALLERY */
+    .photo-gallery {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+    }
+    .photo-gallery a img {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      transition: opacity 0.2s;
+    }
+    .photo-gallery a img:hover { opacity: 0.8; }
+
+    /* ORGANIZERS */
+    .organizers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .organizer-card {
+      text-align: center;
+    }
+    .organizer-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #dde4ef;
+      margin-bottom: 0.6rem;
+      background: #f0f6ff;
+    }
+    .organizer-card .org-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #1a3a5c;
+      margin-bottom: 0.2rem;
+    }
+    .organizer-card .org-role {
+      font-size: 0.82rem;
+      color: #888;
+    }
+    .past-organizers {
+      border-top: 1px solid #eee;
+      padding-top: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    .past-organizers h3 {
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+    .past-organizers .organizers-grid {
+      margin-bottom: 0;
+    }
+    .meeting-photo-banner {
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .meeting-photo-banner img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .meeting-photo-banner p {
+      font-size: 0.82rem;
+      color: #999;
+      margin-top: 0.4rem;
+      text-align: center;
+    }
 
     /* COMMUNITY */
     .community-grid {
@@ -284,11 +328,12 @@
 <nav>
   <a class="site-title" href="#">Dutch Political Psychology</a>
   <ul>
-    <li><a href="#meetings">Meetings</a></li>
+    <li><a href="#meeting">Meetings</a></li>
     <li><a href="#mailing">Mailing List</a></li>
     <li><a href="#present">Present</a></li>
     <li><a href="#announcements">Announcements</a></li>
     <li><a href="#archive">Archive</a></li>
+    <li><a href="#organizers">Organizers</a></li>
     <li><a href="#community">Community</a></li>
   </ul>
 </nav>
@@ -296,7 +341,7 @@
 <!-- HERO -->
 <div class="hero">
   <h1>Dutch Political Psychology</h1>
-  <p>A community for researchers working at the intersection of political science and psychology in the Netherlands (and beyond).</p>
+  <p>A community for researchers working at the intersection of political science and psychology in the Netherlands.</p>
   <span class="badge">🎓 Open to all researchers & students</span>
 </div>
 
@@ -307,13 +352,13 @@
     <div class="date"><strong>Friday November 13, 2026 · 10:30–17:00</strong></div>
     <h3>Fall Meeting 2026</h3>
     <p>Join us for presentations featuring political psychology work from diverse disciplines by both junior and senior researchers, followed by drinks.
-    <br>This time, in addition to the talks, we will again feature a poster session, in which junior researchers are invited to present their work related to political psychology. 
+    This time, we will again feature a poster session, in which junior researchers are invited to present their work related to political psychology.
       Please feel warmly invited to sign up and spread this call to junior researchers you think may be interested. If you're interested in presenting a poster, please indicate this when filling in the sign-up form (see link below).
 We are again able to sponsor the printing costs for junior researchers who are in need of this support in order to present their poster. If you're interested in this sponsoring, please reach out by sending us an email.</p>
-    <div class="meta">📍 University of Amsterdam, Roeterseilandcampus, REC A — Room C10.20 &nbsp;&nbsp; </div>
+    <div class="meta">📍 University of Amsterdam, Roeterseilandcampus REC A — Room C10.20</div>
     <p style="margin-top:1rem; font-size:0.95rem; color:#444;"><strong>Registration:</strong> In case you are planning on attending, please fill in the form by clicking the button below.</p>
     <a href="https://forms.cloud.microsoft/e/pyNSimwu4B" target="_blank" class="btn">Register for this meeting</a>
-    <a href="#" class="btn btn-outline">View program</a>
+    <a href="#" class="btn btn-outline">View programme</a>
   </div>
   <p style="font-size:0.9rem; color:#666; margin-top:0.5rem;">Not yet registered for the mailing list? <a href="#mailing" style="color:#2e6da4;">Sign up below</a> to receive meeting invitations and updates.</p>
 </section>
@@ -321,30 +366,8 @@ We are again able to sponsor the printing costs for junior researchers who are i
 <!-- MAILING LIST -->
 <section id="mailing">
   <h2>✉️ Join the Mailing List</h2>
-  <p style="margin-bottom:1.25rem; color:#444;">Stay informed about upcoming meetings, calls for presentations, announcements, and community news.</p>
-  <form onsubmit="handleForm(event, 'mailing-thanks')">
-    <label for="ml-name">Full name</label>
-    <input type="text" id="ml-name" placeholder="Your name" required />
-
-    <label for="ml-email">Email address</label>
-    <input type="email" id="ml-email" placeholder="your@email.nl" required />
-
-    <label for="ml-affil">Affiliation</label>
-    <input type="text" id="ml-affil" placeholder="University / Institute" />
-
-    <label for="ml-role">Role</label>
-    <select id="ml-role">
-      <option value="">— Select —</option>
-      <option>PhD student</option>
-      <option>Postdoctoral researcher</option>
-      <option>Assistant / Associate / Full Professor</option>
-      <option>Master's student</option>
-      <option>Other</option>
-    </select>
-
-    <button type="submit">Subscribe</button>
-    <p id="mailing-thanks" style="display:none; color:green; margin-top:0.75rem;">✅ Thank you! You've been added to the mailing list.</p>
-  </form>
+  <p style="margin-bottom:1.25rem; color:#444;">Stay informed about upcoming meetings, calls for presentations, announcements, and community news. Click the button below to sign up.</p>
+  <a href="https://list.uva.nl/postorius/lists/politicalpsychology.list.uva.nl/" target="_blank" class="btn">Sign up for the mailing list</a>
 </section>
 
 <!-- INTEREST IN PRESENTING -->
@@ -370,9 +393,9 @@ We are again able to sponsor the printing costs for junior researchers who are i
     <label for="pr-timing">Preferred timing</label>
     <select id="pr-timing">
       <option value="">— No preference —</option>
-      <option>Spring 2027</option>
-      <option>Fall 2027</option>
-      <option>Spring 2028</option>
+      <option>Early 2027</option>
+      <option>Mid 2027</option>
+      <option>Late 2027</option>
       <option>Flexible</option>
     </select>
 
@@ -386,7 +409,7 @@ We are again able to sponsor the printing costs for junior researchers who are i
   <h2>📢 Announcements</h2>
 
   <div class="announcement">
-    <div class="ann-date">September 6, 2026</div>
+    <div class="ann-date">September 8, 2026</div>
     <p><strong>Call for edited book proposals — Routledge Global Perspectives in Political Psychology series</strong></p>
     <p>Cengiz Erisen and I (Martijn van Zomeren) are looking for new edited book proposals in our <a href="https://www.routledge.com/Global-Perspectives-in-Political-Psychology/book-series/GPPP" target="_blank">Routledge Global Perspectives in Political Psychology series</a> — see the titles so far at that link.</p>
     <p>The format is quite fitting for bringing together a collection of perspectives and insights/findings on a societally relevant topic. Chapters can range from theoretical to empirical, and from review of published research to novel primary studies. The focus is political psychology, which is an interdisciplinary field with psychology and political science as key audiences (but also sociology, philosophy, and communication science). Proposals are developed with the series editors (Cengiz Erisen and myself) and then contracted with the book editor(s).</p>
@@ -395,18 +418,20 @@ We are again able to sponsor the printing costs for junior researchers who are i
   </div>
 
   <div class="announcement">
-    <div class="ann-date">September 4, 2026</div>
-    <p><strong>Call for poster presentations:</strong> We are looking for poster session presenters for our Fall 2026 meeting. <a href="#present" style="color:#2e6da4;">Indicate your interest here.</a></p>
+    <div class="ann-date">September 15, 2026</div>
+    <p><strong>PhD position — A.I. Feels project (University of Amsterdam)</strong></p>
+    <p>We are looking for a PhD candidate to be part of the <strong>A.I. Feels</strong> interdisciplinary research project. A.I. Feels investigates how the use of emotion-sensitive A.I. chatbots by key politicians and civil servants affects policymaking. The project studies this using different disciplinary perspectives, including political psychology, political communication, human-machine communication, interpretative approaches and the political sociology of emotions. The PhD candidate will work with Rosa Sanchez, Carolin Ischen, and Gijs Schumacher.</p>
+    <p><a href="https://werkenbij.uva.nl/en/vacancies/phd-position-on-the-effects-of-incorporation-of-emotion-sensitive-a-i-on-politics-and-policymaking-netherlands-15455" target="_blank">PhD Position on the Effects of Incorporation of Emotion-Sensitive A.I. on Politics and Policymaking | Work at the University of Amsterdam →</a></p>
   </div>
 
   <div class="announcement">
-    <div class="ann-date">September 8, 2026</div>
-    <p><strong>Call for presentations:</strong> We are looking for speakers for our Spring 2027 meeting. <a href="#present" style="color:#2e6da4;">Indicate your interest here.</a></p>
+    <div class="ann-date">August 20, 2026</div>
+    <p><strong>Call for presentations:</strong> We are looking for speakers for our Spring 2027 meeting. <a href="#present">Indicate your interest here.</a></p>
   </div>
 
   <div class="announcement">
     <div class="ann-date">July 10, 2026</div>
-    <p><strong>Job posting:</strong> *ADD CONTENT HERE*. <a href="#" style="color:#2e6da4;">More info →</a></p>
+    <p><strong>Job posting:</strong> Postdoctoral position in political psychology at Radboud University. Deadline: October 1, 2026. <a href="#">More info →</a></p>
   </div>
 
   <p style="font-size:0.88rem; color:#888; margin-top:0.75rem;">Have an announcement to share with the community? <a href="#community" style="color:#2e6da4;">Contact us.</a></p>
@@ -418,23 +443,131 @@ We are again able to sponsor the printing costs for junior researchers who are i
   <div class="tabs">
     <button class="tab-btn active" onclick="filterArchive('all', this)">All</button>
     <button class="tab-btn" onclick="filterArchive('2026', this)">2026</button>
-   <!--  <button class="tab-btn" onclick="filterArchive('2025', this)">2025</button>
-    <button class="tab-btn" onclick="filterArchive('2024', this)">2024</button> -->
+    <button class="tab-btn" onclick="filterArchive('2025', this)">2025</button>
+    <button class="tab-btn" onclick="filterArchive('2024', this)">2024</button>
+    <button class="tab-btn" onclick="filterArchive('2023', this)">2023</button>
   </div>
 
   <div id="archive-list">
+
     <div class="archive-item" data-year="2026">
       <div class="info">
-        <h3>Spring Meeting 2026</h3>
-        <p>May 22, 2026 · Universit of Amsterdam· 
-          Speakers: Ruth Dassonneville, Jakob Kasper, Mark Brandt, Philipp Mendoza, Honorata Mazepus, Ashay Deshpande </p>
+        <h3>Spring Meeting 2026 — Emotions, Norms & Political Behavior</h3>
+        <p>May 14, 2026 · Utrecht University · Speakers: A. Jansen, B. de Vries</p>
+        <div class="photo-gallery">
+          <a href="dppm_spring26_1.jpeg" target="_blank"><img src="dppm_spring26_1.jpeg" alt="Spring 2026 meeting photo 1" /></a>
+          <a href="dppm_spring26_2.jpeg" target="_blank"><img src="dppm_spring26_2.jpeg" alt="Spring 2026 meeting photo 2" /></a>
+          <a href="dppm_spring26_3.jpeg" target="_blank"><img src="dppm_spring26_3.jpeg" alt="Spring 2026 meeting photo 3" /></a>
+        </div>
       </div>
       <div class="links">
-     <a href="Spring2026_program.pdf">Program</a>
-      <a href="#">Photos</a>
+        <a href="#">Programme</a>
       </div>
     </div>
 
+    <div class="archive-item" data-year="2025">
+      <div class="info">
+        <h3>Fall Meeting 2025 — Polarization in the Dutch Context</h3>
+        <p>November 6, 2025 · Leiden University · Speakers: C. Bakker, D. Smit</p>
+      </div>
+      <div class="links">
+        <a href="#">Programme</a>
+        <a href="#">Photos</a>
+      </div>
+    </div>
+
+    <div class="archive-item" data-year="2025">
+      <div class="info">
+        <h3>Spring Meeting 2025 — Social Identity & Political Attitudes</h3>
+        <p>April 3, 2025 · Radboud University · Speakers: E. Mulder, F. Hoekstra</p>
+      </div>
+      <div class="links">
+        <a href="#">Programme</a>
+      </div>
+    </div>
+
+    <div class="archive-item" data-year="2024">
+      <div class="info">
+        <h3>Fall Meeting 2024 — Moralization & Democratic Values</h3>
+        <p>October 10, 2024 · VU Amsterdam · Speakers: G. Peters, H. Willems</p>
+      </div>
+      <div class="links">
+        <a href="#">Programme</a>
+        <a href="#">Photos</a>
+      </div>
+    </div>
+
+    <div class="archive-item" data-year="2023">
+      <div class="info">
+        <h3>Spring Meeting 2023</h3>
+        <p>Organized by Jojanneke van der Toorn & Yph Lelkes</p>
+        <div class="photo-gallery">
+          <a href="dppm_spring23_1.jpeg" target="_blank"><img src="dppm_spring23_1.jpeg" alt="Spring 2023 meeting photo 1" /></a>
+          <a href="dppm_spring23_2.jpeg" target="_blank"><img src="dppm_spring23_2.jpeg" alt="Spring 2023 meeting photo 2" /></a>
+        </div>
+      </div>
+      <div class="links">
+        <a href="#">Programme</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ORGANIZERS -->
+<section id="organizers">
+  <h2>👥 About the Organizers</h2>
+
+  <div class="organizers-grid">
+    <div class="organizer-card">
+      <img src="photo_linda.jpg" alt="Linda Bomm" />
+      <div class="org-name">Linda Bomm</div>
+      <div class="org-role">Organizer</div>
+    </div>
+    <div class="organizer-card">
+      <img src="photo_chantal.jpg" alt="Chantal D'Amore" />
+      <div class="org-name">Chantal D'Amore</div>
+      <div class="org-role">Organizer</div>
+    </div>
+    <div class="organizer-card">
+      <img src="photo_maaike.jpg" alt="Maaike Homan" />
+      <div class="org-name">Maaike Homan</div>
+      <div class="org-role">Organizer</div>
+    </div>
+    <div class="organizer-card">
+      <img src="photo_ruthie.jpg" alt="Ruthie Pliskin" />
+      <div class="org-name">Ruthie Pliskin</div>
+      <div class="org-role">Organizer</div>
+    </div>
+    <div class="organizer-card">
+      <img src="photo_bert.jpg" alt="Bert Bakker" />
+      <div class="org-name">Bert Bakker</div>
+      <div class="org-role">Organizer</div>
+    </div>
+  </div>
+
+  <div class="past-organizers">
+    <h3>Past organizers</h3>
+    <div class="organizers-grid">
+      <div class="organizer-card">
+        <img src="photo_jojanneke.jpg" alt="Jojanneke van der Toorn" />
+        <div class="org-name">Jojanneke van der Toorn</div>
+        <div class="org-role">Past organizer</div>
+      </div>
+      <div class="organizer-card">
+        <img src="photo_yph.jpg" alt="Yph Lelkes" />
+        <div class="org-name">Yph Lelkes</div>
+        <div class="org-role">Past organizer</div>
+      </div>
+    </div>
+
+    <div class="meeting-photo-banner">
+      <img src="dppm_spring23_1.jpeg" alt="Meeting attendants and organizers, Spring 2023" />
+      <p>Meeting attendants and organizers — Spring 2023, organized by Jojanneke van der Toorn & Yph Lelkes</p>
+    </div>
+  </div>
+
+</section>
 
 <!-- COMMUNITY -->
 <section id="community">
@@ -442,7 +575,7 @@ We are again able to sponsor the printing costs for junior researchers who are i
   <p style="margin-bottom:1.5rem; color:#444;">Connect with fellow researchers, share resources, and stay engaged between meetings.</p>
   <div class="community-grid">
     <div class="community-card">
-      <!-- <div class="icon">💬</div>
+      <div class="icon">💬</div>
       <h3>Discussion & Slack</h3>
       <p>Join our Slack workspace to discuss research, share papers, and ask questions.</p>
       <a href="#">Join Slack →</a>
@@ -459,18 +592,18 @@ We are again able to sponsor the printing costs for junior researchers who are i
       <p>Bimonthly online reading group on political psychology. Open to all levels.</p>
       <a href="#">Learn more →</a>
     </div>
-    <div class="community-card">-->
+    <div class="community-card">
       <div class="icon">📬</div>
       <h3>Contact the Organizers</h3>
       <p>Questions, suggestions, or want to collaborate? We'd love to hear from you.</p>
-      <a href="mailto:politicalpsychology@list.uva.nl">Send an email →</a>
+      <a href="mailto:info@dutchpoliticalpsychology.nl">Send an email →</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>Dutch Political Psychology Community · <a href="mailto:politicalpsychology@list.uva.nl">politicalpsychology@list.uva.nl</a></p>
+  <p>Dutch Political Psychology Community · <a href="mailto:info@dutchpoliticalpsychology.nl">info@dutchpoliticalpsychology.nl</a></p>
   <p style="margin-top:0.4rem; font-size:0.82rem;">Last updated September 2026</p>
 </footer>
 
@@ -492,4 +625,3 @@ We are again able to sponsor the printing costs for junior researchers who are i
 
 </body>
 </html>
-
