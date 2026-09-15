@@ -698,27 +698,29 @@ We are again able to sponsor the printing costs for junior researchers who are i
     document.getElementById(thanksId).style.display = 'block';
     e.target.reset();
   }
-    function toggleAcc(header) {
-      const body = header.nextElementSibling;
-      const chevron = header.querySelector('.chevron');
-      body.classList.toggle('open');
-      chevron.style.transform = body.classList.contains('open') ? 'rotate(180deg)' : '';
-    }
 
-    function filterArchive(year, btn) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.accordion-item').forEach(item => {
-        item.style.display = (year === 'all' || item.dataset.year === year) ? '' : 'none';
-      }
- function toggleNav() {
-  document.getElementById('nav-menu').classList.toggle('open');
-}
-function closeNav() {
-  document.getElementById('nav-menu').classList.remove('open');
-});
-    }
+  function toggleAcc(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.chevron');
+    body.classList.toggle('open');
+    chevron.style.transform = body.classList.contains('open') ? 'rotate(180deg)' : '';
+  }
 
-  </script>
+  function filterArchive(year, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.accordion-item').forEach(item => {
+      item.style.display = (year === 'all' || item.dataset.year === year) ? '' : 'none';
+    });
+  }
+
+  function toggleNav() {
+    document.getElementById('nav-menu').classList.toggle('open');
+  }
+
+  function closeNav() {
+    document.getElementById('nav-menu').classList.remove('open');
+  }
+</script>
 </body>
 </html>
